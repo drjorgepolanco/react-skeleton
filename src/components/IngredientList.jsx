@@ -5,7 +5,8 @@ var Ingredient = require('./Ingredient.jsx');
 var ingredients = [
     {"id": 1, "text": "ham"}, 
     {"id": 2, "text": "cheese"}, 
-    {"id": 3, "text": "potatoes"}
+    {"id": 3, "text": "potatoes"},
+    {"id": 4, "text": "banana"}
 ];
 
 // start with CAPS because is a Class
