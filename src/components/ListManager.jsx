@@ -1,5 +1,5 @@
 var React = require('react');
-var List = require('./List.jsx');
+var List  = require('./List.jsx');
 
 var ListManager = React.createClass({
     getInitialState: function() {
@@ -21,15 +21,33 @@ var ListManager = React.createClass({
     },
 
     render: function() {
-        return (
-            <div>
-                <h3>{this.props.title}</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.onChange} value={this.state.newItemText} />
-                    <button>Add</button>
-                </form>
+        var divStyle = {
+            marginTop: 40
+        }
 
-                <List items={this.state.items} />
+        var headingStyle = {
+            marginTop: 10
+        }
+
+        return (
+            <div className="col-sm-4" style={divStyle}>
+                <div className={"panel panel-" + this.props.panelType}>
+                    <div className="panel-heading">
+                        <h3 style={headingStyle}>{this.props.title}</h3>
+                    </div>
+                    <div className="row panel-body">
+                        <div className="col-xs-12">
+                            <form onSubmit={this.handleSubmit} className="input-group">
+                                <input type="text" onChange={this.onChange} value={this.state.newItemText} className="form-control" placeholder="Type something here..." />
+                                <span className="input-group-btn">
+                                    <button className={"btn btn-" + this.props.panelType}>Add</button>
+                                </span>
+                            </form>
+
+                            <List items={this.state.items} />
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
