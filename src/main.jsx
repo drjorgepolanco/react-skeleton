@@ -1,8 +1,5 @@
 var React    = require('react');
 var ReactDOM = require('react-dom');
+var Routes   = require('./Routes.jsx');
 
-var IngredientList = require('./components/IngredientList.jsx');
-var ListManager = require('./components/ListManager.jsx');
-
-ReactDOM.render(<IngredientList />, document.getElementById('ingredients'));
-ReactDOM.render(<ListManager />, document.getElementById('list-manager'));
+ReactDOM.render(Routes, document.getElementById('main'))
